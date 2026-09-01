@@ -33,6 +33,18 @@ app.get('/api/status', (req, res) => {
   });
 });
 
+app.use('/data_diri',(req,res)=>{
+    res.status(200).json({
+        success: true,
+        data: {
+            nama: "Muhammad Fauzan Mubarok Imran",
+            kelas: "XI RPL 1",
+            cita_cita: "full stack developer",
+            hobi: ", bermain game, dan coding",
+        }
+    });
+});
+
 // 6. MIddleware untuk menangani router yang tidak ditemukan
 app.use((req, res, next) => {
   res.status(404).json({
