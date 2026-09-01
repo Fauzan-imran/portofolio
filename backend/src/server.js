@@ -33,7 +33,7 @@ app.get('/api/status', (req, res) => {
   });
 });
 
-app.use('/data_diri',(req,res)=>{
+app.get('/data_diri',(req,res)=>{
     res.status(200).json({
         success: true,
         data: {
