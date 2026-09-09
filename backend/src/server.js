@@ -6,6 +6,9 @@ const dotenv = require("dotenv");
 // 2. load konfigurasi dari file .env
 dotenv.config();
 
+// load koneksi database
+const db = require('./config/db');
+
 // 3. Inisalisasi aplikasi express
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -44,6 +47,11 @@ app.get('/api/biodata',(req,res)=>{
         }
     });
 });
+
+
+const profileRoutes = require('./routes/profilRoutes');
+app.use('/api/profile', profileRoutes);
+
 
 // 6. MIddleware untuk menangani router yang tidak ditemukan
 app.use((req, res, next) => {
