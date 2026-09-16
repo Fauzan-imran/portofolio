@@ -15,10 +15,10 @@ const updateProfile = async (id, data) => {
 
     const [result] = await db.query(
         `UPDATE profile SET
-            name = ?, role = ?, bio = ?, about = ?,
-            avatar_url = ?, resume_url = ?,
-            email = ?, phone = ?, address = ?,
-            github_url = ?, linkedin_url = ?, instagram_url = ?
+        name = ?, role = ?, bio = ?, about = ?,
+        avatar_url = ?, resume_url = ?,
+        email = ?, phone = ?, address = ?,
+        github_url = ?, linkedin_url = ?, instagram_url = ?
         WHERE id = ?`,
         [name, role, bio, about, avatar_url, resume_url,
         email, phone, address, github_url, linkedin_url, instagram_url, id]

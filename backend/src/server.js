@@ -50,7 +50,10 @@ app.get('/api/biodata',(req,res)=>{
 
 
 const profileRoutes = require('./routes/profilRoutes');
+const projectRoutes = require('./routes/projectRoutes');
+
 app.use('/api/profile', profileRoutes);
+app.use('/api/projects', projectRoutes);
 
 
 // 6. MIddleware untuk menangani router yang tidak ditemukan
