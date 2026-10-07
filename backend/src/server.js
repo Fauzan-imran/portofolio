@@ -51,10 +51,13 @@ app.get('/api/biodata',(req,res)=>{
 
 const profileRoutes = require('./routes/profilRoutes');
 const projectRoutes = require('./routes/projectRoutes');
+const skillRoutes = require('./routes/skillRoute');
+const experiencesRoutes = require('./routes/experiencesRoute');
 
 app.use('/api/profile', profileRoutes);
 app.use('/api/projects', projectRoutes);
-
+app.use('/api/skills', skillRoutes);
+app.use('/api/experiences', experiencesRoutes);
 
 // 6. MIddleware untuk menangani router yang tidak ditemukan
 app.use((req, res, next) => {
