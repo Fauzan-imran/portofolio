@@ -25,7 +25,7 @@ const getExperienceById = async (req, res) => {
 const createExperience = async (req, res) => {
   try {
     const data = req.body;
-    if (!data.title || !data.company || !data.start_date) {
+    if (!data.title || !data.company) {
       return res.status(400).json({ success: false, message: 'Title, company, and start date are required' });
     }
     const newExperience = await experiencesModel.createExperience(data);

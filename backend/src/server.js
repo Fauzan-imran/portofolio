@@ -18,6 +18,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
+
 // 5. Endpoint dasar
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -53,11 +56,19 @@ const profileRoutes = require('./routes/profilRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const skillRoutes = require('./routes/skillRoute');
 const experiencesRoutes = require('./routes/experiencesRoute');
+const contactRoutes = require('./routes/contactRoute');
+const certificateRoutes = require('./routes/certificateRoute');
+const testimoniRoutes = require('./routes/testimoniRoute');
+const resumeRoutes = require('./routes/resumeRoute');
 
 app.use('/api/profile', profileRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/skills', skillRoutes);
 app.use('/api/experiences', experiencesRoutes);
+app.use('/api/contacts', contactRoutes);
+app.use('/api/certificates', certificateRoutes);
+app.use('/api/testimonials', testimoniRoutes);
+app.use('/api/resumes', resumeRoutes);
 
 // 6. MIddleware untuk menangani router yang tidak ditemukan
 app.use((req, res, next) => {
